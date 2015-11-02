@@ -10,7 +10,7 @@ public class ExecutiveCmd {
         String res = "";
         String line = null;
         try {  
-            Process pro = Runtime.getRuntime().exec("ls -l /root");  
+            Process pro = Runtime.getRuntime().exec(new String[]{"sh","-c","ls -l|grep ^d"});  
             pro.waitFor();  
             in = pro.getInputStream();  
             BufferedReader read = new BufferedReader(new InputStreamReader(in)); 
